@@ -1,0 +1,18 @@
+{
+  "name": "udemy-course-assignments",
+  "version": "1.0.0",
+  "description": "this a collection of assignments given during node course",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rahul",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
