@@ -1,31 +1,14 @@
-const yargs=require("yargs")
-yargs.command({
-    command:"add",
-    description:"this will add values",
-    handle:function(){
-        console.log("Add a note");
-    }
-})
-yargs.command({
-    command:"remove",
-    description:"this will remove values",
-    handle:function(){
-        console.log("Remove a note");
-    }
-})
-yargs.command({
-    command:"list",
-    description:"this will list data",
-    handle:function(){
-        console.log("list data");
-    }
-})
-yargs.command({
-    command:"read",
-    description:"this will dsiplay all data",
-    handle:function(){
-        console.log("Display data");
-    }
-})
+const request = require('postman-request');
+// request('http://www.google.com', function (error, response, body) {
+//   console.log('error:', error); // Print the error if one occurred
+//   console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+//   console.log('body:', body); // Print the HTML for the Google homepage.
+// });
 
-console.log(yargs.argv)
+const url=require("./config.js").API_KEY;
+console.log(url);
+
+request({url:url,json:true},(error, response, body)=>{
+    console.log(response.body.current)
+    console.log("It is currently "+response.body.current.temp_c+" It feels like "+response.body.current.feelslike_c)
+})
